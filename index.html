@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.3/angular.js" data-semver="1.4.3"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-center">
+          <div class="col-md-12">
+            <img src="images/ng-instagram.png">
+          </div>
+
+          <div class="col-md-12">
+            <form ng-submit="submit()">
+              <input type="text" name="search" ng-model="search" required ng-minlength="3">
+
+              <input type="submit">
+            </form>
+          </div>
+
+          <div class="col-md-12">
+            <p>Searching Instagram for photos tagged with "{{ search }}"</p>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+
+      </div> <!-- end of row //-->
+    </div> <!-- end of container //-->
+  </body>
+
+</html>
