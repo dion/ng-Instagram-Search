@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <title>AngularJS Plunker</title>
+    <title>Instagram Searcher</title>
     <script>document.write('<base href="' + document.location + '" />');</script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -17,8 +17,8 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-3"></div>
-        <div class="col-md-6 text-center">
+        <!-- <div class="col-md-1"></div> -->
+        <div class="col-sm-12 col-xs-12 col-md-12 text-center">
           <div class="col-md-12">
             <img src="images/ng-instagram.png">
           </div>
@@ -32,11 +32,23 @@
           </div>
 
           <div class="col-md-12">
-            <p>Searching Instagram for photos tagged with "{{ search }}"</p>
+            <p ng-if="searchQuery">Searching Instagram for photos tagged with "{{ searchQuery }}"</p>
+
+            <p ng-if="searchQueryAmt > 0">We found {{ searchQueryAmt }} results for "{{ searchQuery }}"</p>
+
+            <p ng-if="searchQueryAmt == 0 && searchQuery">We were unable to find any results for "{{ searchQuery }}"</p>
+          </div>
+
+          <div class="col-md-12">
+            <ul class="listing">
+              <li ng-repeat="item in dataSet">
+                <a ng-href="{{item.link}}"><img ng-src="{{item.images.low_resolution.url}}"></a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-3"></div>
-
+<!--         <div class="col-md-1"></div>
+ -->
       </div> <!-- end of row //-->
     </div> <!-- end of container //-->
   </body>

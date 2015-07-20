@@ -1,2 +1,11 @@
 /* Put your css in here */
+.listing {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.listing li {
+	float:left;
+	padding:10px;
+}
 
