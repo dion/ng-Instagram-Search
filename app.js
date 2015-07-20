@@ -5,6 +5,7 @@ app.controller('MainCtrl', function($scope, $http, $q) {
 	$scope.searchQueryAmt = 0;
 
 	$scope.submit = function () { 
+		$scope.successfulQuery = false;
 		$scope.searchQuery = $scope.search;
 		$scope.search = '';
 		$scope.doSearch();
@@ -23,6 +24,7 @@ app.controller('MainCtrl', function($scope, $http, $q) {
 			params: request
 		})
 		.success(function (result) {
+			$scope.successfulQuery = true;
 			$scope.dataSet = result.data;
 			$scope.searchQueryAmt = $scope.dataSet.length;
 			console.log($scope.dataSet);

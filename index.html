@@ -32,14 +32,14 @@
           </div>
 
           <div class="col-md-12">
-            <p ng-if="searchQuery">Searching Instagram for photos tagged with "{{ searchQuery }}"</p>
+            <p ng-if="searchQuery && searchQueryAmt == 0">Searching Instagram for photos tagged with "{{ searchQuery }}"</p>
 
             <p ng-if="searchQueryAmt > 0">We found {{ searchQueryAmt }} results for "{{ searchQuery }}"</p>
 
             <p ng-if="searchQueryAmt == 0 && searchQuery">We were unable to find any results for "{{ searchQuery }}"</p>
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-12 xfade" ng-if="successfulQuery">
             <ul class="listing">
               <li ng-repeat="item in dataSet">
                 <a ng-href="{{item.link}}"><img ng-src="{{item.images.low_resolution.url}}"></a>
